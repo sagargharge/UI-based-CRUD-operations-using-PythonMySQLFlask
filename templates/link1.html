@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>Update message</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style>
+            body{
+                    height:100%;
+                    width:100%;
+                    background-image:url("http://futurestuffs.com/wp-content/uploads/2018/02/Greenery-Wallpapers-Nature-Hd-22.jpg");/*your background image*/
+                    background-repeat:no-repeat;/*we want to have one single image not a repeated one*/
+                    background-size:cover;/*this sets the image to fullscreen covering the whole screen*/
+                    /*css hack for ie*/
+                }
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">PyMySQL</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="/">Home</a></li>
+                        <li><a href="/listjsonForm">JSON</a></li>
+                        <li><a href="/listForm">Table</a></li>
+                        <li><a href="/About">About</a></li>
+                    </ul>
+                    <!--ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    </ul-->
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+                <center>
+                    <img alt="Giving Thumbs Up Winking" width=76 height=85 src="https://cdn.shopify.com/s/files/1/1061/1924/products/Thumbs_Up_Hand_Sign_Emoji_large.png?v=1480481047">
+                    <br><strong><font size="72" color="yellow">Hello {{name}}</font></h1></strong>
+                    <h1><font size="50" color="orange">Values updated successfully</font></h1>
+                    <a href="/listForm">Show Details</a>
+                </center>
+        </div>
+    </body>
+</html>

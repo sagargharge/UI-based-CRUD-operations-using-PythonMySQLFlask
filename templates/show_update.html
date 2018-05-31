@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Updated data</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<style>
+			body{
+					height:100%;
+					width:100%;
+					background-image:url("https://komodoplatform.com/wp-content/uploads/2018/04/hav61.jpg");/*your background image*/
+					background-repeat:no-repeat;/*we want to have one single image not a repeated one*/
+					background-size:cover;/*this sets the image to fullscreen covering the whole screen*/
+					/*css hack for ie*/
+				}
+			Table tr:first-child {
+															display: none;
+													}
+		</style>
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">PyMySQL</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/listjsonForm">JSON</a></li>
+                        <li class="active"><a href="/listForm">Table</a></li>
+                        <li><a href="/About">About</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+		<div class="container bg-3">
+			<center>
+		    		<h1><font color="orange">Update Employee Details</font></h1>
+		    		<form action="http://127.0.0.1:5000\update_det" method="post">
+					{% for row in data1 %}
+						<table border="0">
+							<tr>
+								<th><font color="white">ID: </th>
+								<td><input type="text" value="{{row[0]}}" name="i_d" disabled></td>
+							</tr>
+							<tr>
+								<th><font color="white">First Name: </th>
+								<td><input type="text" value="{{row[1]}}" name="f_n"></td>
+							</tr>
+							<tr>
+								<th><font color="white">Last Name: </font></th>
+								<td><input type="text" value="{{row[2]}}" name="l_n"></td>
+							</tr>
+							<tr>
+								<th><label for="email"><font color="white">Email: </font></label></th>
+								<td><input type="email" class="form-control" value="{{row[3]}}" name="eml" placeholder="required" required></td>
+							</tr>
+							<tr>
+								<th><font color="white">Age: </font></th>
+								<td><input type="text" value="{{row[4]}}" name="age"></td>
+							</tr>
+							<tr>
+								<th><font color="white">Gender(M/F): </font></th>
+								<td><input type="text" value="{{row[5]}}" name="gdr"></td>
+							</tr>
+							<tr>
+								<th><font color="white">Salary: </font></th>
+								<td><input type="text" value="{{row[6]}}" name="sl"></td>
+							</tr>
+							<tr>
+								<th>- </th>
+				    			<td>- </td>
+							</tr>
+							<tr>
+								<th> </th>
+				    			<td> </td>
+							</tr>
+							<tr>
+								<th><button type="submit" class="btn btn-success">Update</button></th>
+					    		<td><button type="reset" class="btn btn-info">Clear</button></td>
+							</tr>
+						</table>
+					{% endfor %}
+		    		</form>
+		 	</center>
+		</div>
+	</body>
+</html>

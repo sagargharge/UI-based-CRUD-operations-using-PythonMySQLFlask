@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Insert Data</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+		<script>
+			function validateForm() {
+				var x = document.forms["myForm"]["f_name"].value;
+				var y = document.forms["myForm"]["l_name"].value;
+				var z = document.forms["myForm"]["email"].value;
+				var a = document.forms["myForm"]["ag"].value;
+				var b = document.forms["myForm"]["sal"].value;
+				if (x || y || z == "") {
+					alert("value must not be left empty");
+					return false;
+				}
+				if (isNaN(b) || b < 10000) {
+					alert("salary invalid");
+					return false;
+				}
+				if (isNaN(a) || a < 24 || a > 60) {
+					alert("value must be between 24 and 60");
+					return false;
+				}
+
+			}
+		</script>
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">PyMySQL</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/listjsonForm">JSON</a></li>
+                        <li class="active"><a href="/listForm">Table</a></li>
+                        <li><a href="/About">About</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+		<div class="container bg-3">
+			<img src='http://capturegreatness.org/wp-content/uploads/2012/07/Dollarphotoclub_56233474.jpg' style='position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;'>
+			<center>
+		    		<h1><strong><font color="white">Enter Employee Details</font></strong></h1>
+		    		<form class="form-horizontal" name="myForm" action="http://127.0.0.1:5000\insert" method="post">
+			    		<table border="0">
+				    		<tr>
+				     			<th><font color="white">First Name: </font></th>
+				     			<td><input type="text" class="form-control" name="f_name" placeholder="required" required></td>
+				    		</tr>
+				    		<tr>
+				     			<th><font color="white">Last Name: </font></th>
+				     			<td><input type="text" class="form-control" name="l_name" placeholder="required" required></td>
+				    		</tr>
+							<tr>
+				     			<th><label for="email"><font color="white">Email: </font></label></th>
+				     			<td><input type="email" class="form-control" name="email" placeholder="required" required></td>
+				    		</tr>
+				    		<tr>
+				     			<th><font color="white">Age: </font></th>
+				     			<td><input type="text" class="form-control" name="ag" placeholder="required" required></td>
+				    		</tr>
+				    		<tr>
+				     			<th><font color="white">Gender(M/F): </font></th>
+				     			<td>
+									<!--input type="text" name="gndr" placeholder="required"-->
+									<label class="btn btn-default" style="color:blue;">
+				                    	<input type="radio" class="form-control" name="gndr" value="M" /> M
+				                	</label>
+				                	<label class="btn btn-default" style="color:red;">
+				                    	<input type="radio" class="form-control" name="gndr" value="F" /> F
+				                	</label>
+								</td>
+				    		</tr>
+				    		<tr>
+				     			<th><font color="white">Salary: </font></th>
+				     			<td><input type="text" class="form-control" name="sal" placeholder="required" required></td>
+				    		</tr>
+							<tr>
+								<th>- </th>
+				    			<td>- </td>
+							</tr>
+							<tr>
+								<th> </th>
+				    			<td> </td>
+							</tr>
+				    		<tr>
+				    			<th><button type="submit" class="btn btn-success">Insert</button></th>
+				    			<td><button type="reset" class="btn btn-info">Reset</button></td>
+				    		</tr
+					</table>
+		    	</form>
+		 	</center>
+		</div>
+	</body>
+</html>
